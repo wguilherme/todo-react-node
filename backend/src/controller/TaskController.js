@@ -1,6 +1,13 @@
 const TaskModel = require("../model/TaskModel");
 const { findByIdAndDelete } = require("../model/TaskModel");
-const { startOfDay, endOfDay } = require("date-fns");
+const {
+  startOfDay,
+  endOfDay,
+  startOfWeek,
+  endOfWeek,
+  startOfMonth,
+  endOfMonth
+} = require("date-fns");
 
 const current = new Date();
 
@@ -101,6 +108,41 @@ class TaskController {
             //maior que o começo do dia de hoje
             //menor que o fim do dia de hoje
             'when': {'$gte': startOfDay(current), '$lt': endOfDay(current)}
+
+          })
+          .sort('when')
+          .then(response => {
+            return res.status(200).json(response);
+          })
+          .catch(error => {
+            return res.status(500).json(error)
+          })
+  }
+
+  async week(req, res){
+    await TaskModel
+          .find({ 
+            'macaddress': {'$in': req.body.macaddress},
+            //maior que o começo do dia de hoje
+            //menor que o fim do dia de hoje
+            'when': {'$gte': startOfWeek(current), '$lt': endOfWeek(current)}
+
+          })
+          .sort('when')
+          .then(response => {
+            return res.status(200).json(response);
+          })
+          .catch(error => {
+            return res.status(500).json(error)
+          })
+  }
+  async month(req, res){
+    await TaskModel
+          .find({ 
+            'macaddress': {'$in': req.body.macaddress},
+            //maior que o começo do dia de hoje
+            //menor que o fim do dia de hoje
+            'when': {'$gte': startOfMonth(current), '$lt': endOfMonth(current)}
 
           })
           .sort('when')
