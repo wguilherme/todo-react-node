@@ -1,8 +1,14 @@
 import React from 'react';
+import * as S from './styles'
 
 
-function Home() {
-  return <h1>Você está na HOME!</h1>
+
+function Footer() {
+  return (
+   <S.Container>
+     <span>To-Do React Node - @2020</span>
+   </S.Container>
+  )
 }
 
-export default Home;
+export default Footer;
