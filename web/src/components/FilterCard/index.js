@@ -1,8 +1,20 @@
 import React from 'react';
+import * as S from './styles'
+
+import filter from '../../assets/filter.png'
 
 
-function Home() {
-  return <h1>Você está na HOME!</h1>
+function FilterCard({title, activated,}) {
+  return (
+   <S.Container activated={activated}>
+
+     
+
+     <img src={filter} alt="Filtro"/>
+     <span>{title}</span>
+
+   </S.Container>
+  )
 }
 
-export default Home;
+export default FilterCard;
