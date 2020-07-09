@@ -26,8 +26,10 @@ img {
 export const RightSide = styled.div`
 width: 50%;
 height: 70px;
+
 display: flex;
 align-items: center;
+justify-content: flex-end;
 
 
 a {
@@ -36,6 +38,7 @@ a {
    text-decoration: none;
    margin: 0 10px;
    text-transform: uppercase;
+
 
    &:hover {
       color: #EE6B26;
