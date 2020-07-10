@@ -7,7 +7,7 @@ import Footer from '../../components/Footer'
 import FilterCard from '../../components/FilterCard'
 
 function Home() {
-  const [filterActivated, setFilterActivated] = useState("today");
+  const [filterActivated, setFilterActivated] = useState("all");
   return (
    <S.Container>
       <Header/>
