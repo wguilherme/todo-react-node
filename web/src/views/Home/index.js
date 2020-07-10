@@ -6,19 +6,18 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FilterCard from '../../components/FilterCard'
 
-const [filterActivated, setFilterActivated] = useState("today");
 function Home() {
+  const [filterActivated, setFilterActivated] = useState("today");
   return (
    <S.Container>
       <Header/>
 
       <S.FilterArea>
 
-      <button type="button" onClick={() => setFilterActivated("all")}>
-
+    <button type="button" onClick={() => setFilterActivated("all")}>
       <FilterCard title="todos" activated={filterActivated =='all'}  />
       </button>
-
+           
       <button type="button" onClick={() => setFilterActivated("today")}>
       <FilterCard title="hoje" activated={filterActivated =='today'} />
       </button>
