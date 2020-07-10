@@ -16,15 +16,16 @@ function Home() {
 
   //get tasks
   async function loadTasks(){
-    await api.get(`/task/filter/${filterActivated}/11:11:11:11:11:11`)
+    await api.get(`http://localhost:3000/task/filter/${filterActivated}/11:11:11:11:11:11`)
     .then(response => {
 
       setTasks(response.data);
+      console.log(response.data)
 
     })
   }
 
-  useState(() => {
+  useEffect(() => {
     loadTasks();
   }, [filterActivated])
 
@@ -60,14 +61,13 @@ function Home() {
       <S.Title>
         <h3>Tarefas</h3>
       </S.Title>
+
       <S.Content>
-
-    {
-      tasks.map(t => (
-      <TaskCard/>
-      ))
-    }
-
+        {
+          tasks.map(t => (
+          <TaskCard  type={t.type} title={t.title} when={t.when} />
+          ))
+        }
       </S.Content>
 
       
