@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/wguilherme/todo-react-node#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "date-fns": "^2.14.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.21"

@@ -63,7 +63,9 @@ function Home() {
       <S.Content>
 
     {
+      tasks.map(t => (
       <TaskCard/>
+      ))
     }
 
       </S.Content>
