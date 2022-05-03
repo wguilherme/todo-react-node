@@ -32,17 +32,27 @@ align-items: center;
 justify-content: flex-end;
 
 
-a {
+a, button {
    color: white;
    font-weight: bold;
    text-decoration: none;
    margin: 0 10px;
    text-transform: uppercase;
+   button {
+      background: none;
+      border: none;
+   }
 
 
    &:hover {
       color: #EE6B26;
    }  
+}
+
+button {
+   background: none;
+   border: none;
+   cursor: pointer;
 }
 
 #notification {

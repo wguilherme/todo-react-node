@@ -6,8 +6,13 @@ height: 70px;
 background: #20295f;
 border-top: 5px solid #EE6B26;
 
+
 position: fixed;
-bottom: 0px;
+bottom: 0;
+margin-top: 90px;
+
+
+
 
 display: flex;
 align-items: center;
